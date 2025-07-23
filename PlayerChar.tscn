@@ -1,0 +1,112 @@
+[gd_scene load_steps=13 format=3 uid="uid://dcvitbd8elagr"]
+
+[ext_resource type="Texture2D" uid="uid://wgvkkrer3dc0" path="res://icon.svg" id="1_fpmoo"]
+[ext_resource type="Script" uid="uid://b7ncxa25ghki3" path="res://Scripts/Player/MovementController.gd" id="1_sii85"]
+[ext_resource type="Script" uid="uid://cbchjkr5dhmsv" path="res://Scripts/Core/TextBox.gd" id="3_1y1dc"]
+[ext_resource type="Script" uid="uid://cb00crf40j4rs" path="res://Scripts/Player/PlayerInteractionArea.gd" id="3_l2tc2"]
+[ext_resource type="Script" uid="uid://bxlrnt0lkpoxc" path="res://Scripts/Objects/Terminal.gd" id="3_xpc5d"]
+[ext_resource type="Texture2D" uid="uid://c51qnt3gvxmm1" path="res://cmd.png" id="4_l2tc2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1y1dc"]
+size = Vector2(948, 339.313)
+
+[sub_resource type="GDScript" id="GDScript_l2tc2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xpc5d"]
+size = Vector2(128, 774)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2tc2"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbigo"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akogr"]
+size = Vector2(81.8291, 706.392)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(674, 522)
+metadata/_edit_group_ = true
+
+[node name="Icon2" type="Sprite2D" parent="Ground"]
+position = Vector2(1.00001, 1.99999)
+scale = Vector2(7.40625, 2.65625)
+texture = ExtResource("1_fpmoo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_1y1dc")
+
+[node name="Ground2" type="StaticBody2D" parent="."]
+position = Vector2(1622, 427)
+metadata/_edit_group_ = true
+
+[node name="Icon2" type="Sprite2D" parent="Ground2"]
+position = Vector2(1.00001, 1.99999)
+scale = Vector2(7.40625, 2.65625)
+texture = ExtResource("1_fpmoo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_1y1dc")
+
+[node name="Door" type="StaticBody2D" parent="."]
+position = Vector2(2062, -5)
+script = SubResource("GDScript_l2tc2")
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="Door"]
+position = Vector2(0, -122)
+scale = Vector2(1, 6.04688)
+texture = ExtResource("1_fpmoo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(0, -122)
+shape = SubResource("RectangleShape2D_xpc5d")
+
+[node name="Character" type="CharacterBody2D" parent="."]
+position = Vector2(476, 70)
+script = ExtResource("1_sii85")
+metadata/_edit_group_ = true
+
+[node name="Icon" type="Sprite2D" parent="Character"]
+position = Vector2(0, -1)
+texture = ExtResource("1_fpmoo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_l2tc2")
+
+[node name="Camera2D" type="Camera2D" parent="Character"]
+
+[node name="Area2D" type="Area2D" parent="Character"]
+position = Vector2(0, -1)
+script = ExtResource("3_l2tc2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/Area2D"]
+shape = SubResource("RectangleShape2D_gbigo")
+
+[node name="Terminal" type="Area2D" parent="."]
+z_index = -2
+position = Vector2(1496, 161)
+scale = Vector2(0.256633, 0.256633)
+script = ExtResource("3_xpc5d")
+
+[node name="Cmd" type="Sprite2D" parent="Terminal"]
+texture = ExtResource("4_l2tc2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terminal"]
+position = Vector2(-4.57764e-05, 0)
+shape = SubResource("RectangleShape2D_akogr")
+
+[node name="LineEdit" type="LineEdit" parent="Terminal"]
+offset_left = -280.557
+offset_top = -455.905
+offset_right = 245.443
+offset_bottom = -361.905
+theme_override_font_sizes/font_size = 48
+script = ExtResource("3_1y1dc")
+
+[connection signal="area_entered" from="Terminal" to="Terminal" method="_on_area_entered"]

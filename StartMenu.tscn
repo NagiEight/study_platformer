@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://dabmniwv6m65t"]
+
+[ext_resource type="Script" uid="uid://bybq2wphs4d4p" path="res://Scripts/Core/StartMenu.gd" id="1_ufv5y"]
+[ext_resource type="Texture2D" uid="uid://cji1lf8sf4e4s" path="res://my0dream.png" id="2_0d5ky"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ufv5y")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 646.0
+texture = ExtResource("2_0d5ky")
+
+[node name="TitleLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(300, 60)
+offset_left = 351.0
+offset_top = -10.0
+offset_right = 842.0
+offset_bottom = 138.0
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 108
+text = "TOP TEXT"
+horizontal_alignment = 1
+
+[node name="LowerText" type="Label" parent="."]
+custom_minimum_size = Vector2(300, 60)
+offset_left = 289.0
+offset_top = 506.0
+offset_right = 942.0
+offset_bottom = 654.0
+theme_override_constants/outline_size = 25
+theme_override_font_sizes/font_size = 108
+text = "LOWER TEXT"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 791.0
+offset_top = 389.0
+offset_right = 1091.0
+offset_bottom = 577.0
+
+[node name="StartButton" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "START"
+
+[node name="SettingsButton" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "SETTINGS"
+
+[node name="QuitButton" type="Button" parent="Buttons"]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "QUIT"
+
+[node name="FadeOverlay" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

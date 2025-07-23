@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://6rnp5cpnsgbu"]
+
+[ext_resource type="Script" uid="uid://mef3x53445us" path="res://Scripts/Core/SettingsMenu.gd" id="1_svoao"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_svoao")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 471.0
+offset_top = 75.0
+offset_right = 701.0
+offset_bottom = 144.0
+theme_override_font_sizes/font_size = 50
+text = "SETTINGS"
+
+[node name="SettingsContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = 367.0
+offset_top = 248.0
+offset_right = 789.0
+offset_bottom = 370.0
+theme_override_constants/separation = 29
+
+[node name="AudioSection" type="HBoxContainer" parent="SettingsContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/AudioSection"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="SettingsContainer/AudioSection"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="ControlSection" type="HBoxContainer" parent="SettingsContainer"]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="SettingsContainer/ControlSection"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+offset_left = 373.0
+offset_top = 490.0
+offset_right = 795.0
+offset_bottom = 550.0
+text = "BACK TO MENU"
