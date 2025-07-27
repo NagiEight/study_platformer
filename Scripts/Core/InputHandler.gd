@@ -13,13 +13,12 @@ var attack_held := false
 
 func _process(delta):
 	Update()
-
+	
 # 🟡 Poll input state each frame
 func Update():
 	move_input = GetMovementInput()
 	jump_pressed = IsJumpPressed()
 	attack_held = IsAttackHeld()
-
 # 🟢 Return true if jump input is pressed this frame
 func IsJumpPressed() -> bool:
 	match control_scheme:

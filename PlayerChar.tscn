@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dcvitbd8elagr"]
+[gd_scene load_steps=14 format=3 uid="uid://dcvitbd8elagr"]
 
 [ext_resource type="Texture2D" uid="uid://wgvkkrer3dc0" path="res://icon.svg" id="1_fpmoo"]
+[ext_resource type="Script" uid="uid://mu1yffujae0c" path="res://Scripts/Core/InputHandler.gd" id="1_gbigo"]
 [ext_resource type="Script" uid="uid://b7ncxa25ghki3" path="res://Scripts/Player/MovementController.gd" id="1_sii85"]
 [ext_resource type="Script" uid="uid://cbchjkr5dhmsv" path="res://Scripts/Core/TextBox.gd" id="3_1y1dc"]
 [ext_resource type="Script" uid="uid://cb00crf40j4rs" path="res://Scripts/Player/PlayerInteractionArea.gd" id="3_l2tc2"]
@@ -25,6 +26,7 @@ size = Vector2(128, 128)
 size = Vector2(81.8291, 706.392)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_gbigo")
 
 [node name="Ground" type="StaticBody2D" parent="."]
 position = Vector2(674, 522)

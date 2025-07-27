@@ -33,7 +33,7 @@ func DisplayDialogue(text : String) -> void:
 	await (get_tree().create_timer(3))
 	dialogue_box.visible = false
 
-func TogglePauseMenu(show : bool) -> void:
+func TogglePauseMenu(show: bool) -> void:
 	pause_menu.visible = show
 	get_tree().paused = show
 
@@ -45,3 +45,12 @@ func ShowPopup(message : String) -> void:
 	popup_label.visible = true
 	await(get_tree().create_timer(2))
 	popup_label.visible = false
+	
+func ShowSettings():
+	var settings_menu
+	if settings_menu == null:
+		settings_menu = preload("res://SettingsMenu.tscn").instantiate()
+		get_tree().current_scene.add_child(settings_menu)
+	else:
+		get_tree().paused = not get_tree().paused
+		$SettingsMenu.visible = get_tree().paused

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var InputHandler = preload("res://Scripts/Core/InputHandler.gd").new()
+
 var speed
 const gravity = 1200
 const jumpForce = -500
@@ -40,3 +42,7 @@ func _physics_process(delta):
 		is_jumping = true
 	
 	move_and_slide()
+	
+
+
+	

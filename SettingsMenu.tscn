@@ -46,11 +46,7 @@ layout_mode = 2
 [node name="OptionButton" type="OptionButton" parent="SettingsContainer/ControlSection"]
 layout_mode = 2
 
-[node name="BackButton" type="Button" parent="."]
+[node name="BackButton" type="Button" parent="SettingsContainer"]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-offset_left = 373.0
-offset_top = 490.0
-offset_right = 795.0
-offset_bottom = 550.0
 text = "BACK TO MENU"

@@ -10,10 +10,15 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="study platformer"
 run/main_scene="uid://dcvitbd8elagr"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+HUD="*res://HUD.tscn"
+PauseManager="*res://PauseManager.tscn"
 
 [display]
 
