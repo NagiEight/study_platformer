@@ -1,0 +1,4 @@
+Handlers: Core scripts that interact with the game
+Managers: The bridge between Handlers and SceneScripts for easier state management
+SceneScripts: Each Scene has one script. SceneScripts make calls to Managers when needed.
+Interfaces: Shares rules between scripts for more flexible and less messy code.

@@ -16,18 +16,18 @@ func _ready():
 
 func StartGame():
 	SetState(GameState.Gameplay)
-	LoadScene("res://Scenes/MainGame.tscn")
+	LoadScene("res://Scenes/PlayerChar.tscn")
 	# TODO: Initialize gameplay systems here
 
 func PauseGame():
 	SetState(GameState.Paused)
 	get_tree().paused = true
-	# TODO: Show pause menu UI
+	HUD.TogglePauseMenu(true)
 
 func ResumeGame():
 	SetState(GameState.Gameplay)
 	get_tree().paused = false
-	# TODO: Hide pause menu UI
+	HUD.TogglePauseMenu(false)
 
 func EndGame():
 	SetState(GameState.GameOver)

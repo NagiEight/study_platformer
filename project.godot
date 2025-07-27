@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 HUD="*res://HUD.tscn"
 PauseManager="*res://PauseManager.tscn"
+GameManager="*res://GameManager.tscn"
 
 [display]
 

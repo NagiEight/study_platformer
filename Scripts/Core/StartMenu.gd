@@ -7,7 +7,7 @@ func _ready():
 	$Buttons/QuitButton.pressed.connect(_on_quit_pressed)
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://PlayerChar.tscn")
+	GameManager.StartGame()
 
 func _on_settings_pressed():
 	UIManager.ShowSettings()

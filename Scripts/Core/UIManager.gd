@@ -16,6 +16,9 @@ func _ready():
 	minimap_icon = get_node("HUD/Minimap/PlayerIcon")
 	popup_label = get_node("HUD/PopupMessage")
 
+func _on_continue_pressed():
+	GameManager.ResumeGame()
+	
 func UpdateHealthBar(current : float, max : float) -> void:
 	health_bar.value = current
 	health_bar.max_value = max
@@ -46,11 +49,3 @@ func ShowPopup(message : String) -> void:
 	await(get_tree().create_timer(2))
 	popup_label.visible = false
 	
-func ShowSettings():
-	var settings_menu
-	if settings_menu == null:
-		settings_menu = preload("res://SettingsMenu.tscn").instantiate()
-		get_tree().current_scene.add_child(settings_menu)
-	else:
-		get_tree().paused = not get_tree().paused
-		$SettingsMenu.visible = get_tree().paused

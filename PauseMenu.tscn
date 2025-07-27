@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c2d0h6y668stg"]
+[gd_scene load_steps=0 format=3 uid="uid://c2d0h6y668stg"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -8,26 +8,54 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TopText" type="Label" parent="."]
-layout_mode = 2
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="ButtonsContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ContinueButton" type="Button" parent="ButtonsContainer"]
-layout_mode = 2
-
-[node name="SettingsButton" type="Button" parent="ButtonsContainer"]
-layout_mode = 2
-
-[node name="QuitButton" type="Button" parent="ButtonsContainer"]
-layout_mode = 2
-
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopText" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -136.0
+offset_top = 197.0
+offset_right = 136.0
+offset_bottom = 280.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "PAUSED"
+horizontal_alignment = 1
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -122.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="ContinueButton" type="Button" parent="Panel/ButtonsContainer"]
+custom_minimum_size = Vector2(0, 52.905)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 40
+text = "Continue"
+
+[node name="SettingsButton" type="Button" parent="Panel/ButtonsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="Panel/ButtonsContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Quit"
